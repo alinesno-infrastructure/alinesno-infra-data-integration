@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alinesno.infra.data.integration.mapper.JobRunHisMapper">
+
+    <resultMap type="com.alinesno.infra.data.integration.entity.JobRunHisEntity" id="JobRunHisResult">
+                    <result property="runJobId" column="run_job_id"/>
+                    <result property="startTime" column="start_time"/>
+                    <result property="endTime" column="end_time"/>
+                    <result property="runStatus" column="run_status"/>
+                    <result property="remark" column="remark"/>
+    </resultMap>
+
+    <select id="taskCount" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        select
+          CURDATE() curDay,
+            count(1) total,
+            sum( case when IFNULL(run_status,0) =1 then 1 else 0 end ) as success,
+            sum( case when IFNULL(run_status,0) =0 then 1 else 0 end ) as fail
+        from job_run_his
+        where DATE_FORMAT(add_time, '%Y-%m-%d') =CURDATE()
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+    </select>
+
+    <select id="taskCountMonth" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        select
+            CURDATE() curDay,
+            count(1) total,
+            sum( case when IFNULL(run_status,0) =1 then 1 else 0 end ) as success,
+            sum( case when IFNULL(run_status,0) =0 then 1 else 0 end ) as fail
+        from job_run_his
+        where DATE_FORMAT(add_time, '%Y-%m') = DATE_FORMAT( CURDATE() , '%Y-%m')
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+    </select>
+
+    <select id="taskCountChart" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        SELECT
+            a.curDay,
+            ifnull( b.total, 0 ) total,
+            ifnull( b.success, 0 ) success,
+            ifnull( b.fail, 0 ) fail
+        FROM
+            ( SELECT date_add( curdate(), INTERVAL ( cast( id AS signed ) - 29 ) DAY ) AS curDay FROM mq_serial_num ORDER BY id ) AS a
+            LEFT JOIN (
+            SELECT
+                curDay,
+                sum( IFNULL( total, 0 ) ) AS total,
+                sum( IFNULL( success, 0 ) ) AS success,
+                sum( IFNULL( fail, 0 ) ) AS fail
+            FROM
+                (
+                SELECT
+                    DATE_FORMAT( add_time, '%Y-%m-%d' ) curDay,
+                    count( 1 ) total,
+                    sum( CASE WHEN IFNULL( run_status, 0 ) = 1 THEN 1 ELSE 0 END ) AS success,
+                    sum( CASE WHEN IFNULL( run_status, 0 ) = 0 THEN 1 ELSE 0 END ) AS fail
+                FROM
+                    job_run_his
+                WHERE DATE_FORMAT( add_time, '%Y-%m-%d' ) > DATE_SUB( CURDATE(), INTERVAL 30 DAY )
+                    <if test="operatorId != null and operatorId != '' ">
+                        AND operator_id = #{operatorId}
+                    </if>
+                GROUP BY
+                    DATE_FORMAT( add_time, '%Y-%m-%d' ) UNION ALL
+                SELECT
+                    DATE_FORMAT( add_time, '%Y-%m-%d' ) curDay,
+                    count( 1 ) total,
+                    sum( CASE WHEN IFNULL( run_status, 0 ) = 1 THEN 1 ELSE 0 END ) AS success,
+                    sum( CASE WHEN IFNULL( run_status, 0 ) = 0 THEN 1 ELSE 0 END ) AS fail
+                FROM
+                    trans_run_his
+                WHERE DATE_FORMAT( add_time, '%Y-%m-%d' ) > DATE_SUB( CURDATE(), INTERVAL 30 DAY )
+                    <if test="operatorId != null and operatorId != '' ">
+                        AND operator_id = #{operatorId}
+                    </if>
+                GROUP BY
+                    DATE_FORMAT( add_time, '%Y-%m-%d' )
+                ) a
+            GROUP BY
+                curDay
+            ) AS b ON a.curDay = b.curDay
+        WHERE
+            1 = 1
+        ORDER BY
+            a.curDay
+    </select>
+
+    <select id="taskCountYear" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        select
+            DATE_FORMAT( CURDATE() , '%Y') as curDay,
+            count(1) total,
+            sum( case when IFNULL(run_status,0) =1 then 1 else 0 end ) as success,
+            sum( case when IFNULL(run_status,0) =0 then 1 else 0 end ) as fail
+        from job_run_his
+        where DATE_FORMAT(add_time, '%Y') = DATE_FORMAT( CURDATE() , '%Y')
+            <if test="operatorId != null and operatorId != '' ">
+                AND operator_id = #{operatorId}
+            </if>
+    </select>
+
+</mapper>

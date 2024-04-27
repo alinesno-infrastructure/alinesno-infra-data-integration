@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alinesno.infra.data.integration.mapper.TransMapper">
+
+    <resultMap type="com.alinesno.infra.data.integration.dto.TransDto" id="JobType">
+        <result property="categoryName" column="categoryName_id"/>
+
+    </resultMap>
+
+    <select id="getManagerList" resultType="com.alinesno.infra.data.integration.dto.TransDto">
+        SELECT category.category_name,trans.*
+        FROM  category,trans
+        WHERE category.id=trans.category_id
+    </select>
+</mapper>

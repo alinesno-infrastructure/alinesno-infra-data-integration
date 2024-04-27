@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alinesno.infra.data.integration.mapper.TransMonitorMapper">
+
+    <resultMap type="com.alinesno.infra.data.integration.entity.TransMonitorEntity" id="TransMonitorResult">
+        <result property="monitorTransId" column="monitor_transid"/>
+        <result property="monitorSuccess" column="monitor_success"/>
+        <result property="monitorFail" column="monitor_fail"/>
+        <result property="monitorStatus" column="monitor_status"/>
+        <result property="runStatus" column="run_status"/>
+        <result property="lastExecuteTime" column="last_execute_time"/>
+        <result property="nextExecuteTime" column="next_execute_time"/>
+    </resultMap>
+
+    <select id="taskCount" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        SELECT
+        count(1) total,
+        IFNULL(sum(monitor_success),0) success,
+        IFNULL(sum(monitor_fail),0) fail
+        FROM trans_monitor
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+    </select>
+    <select id="getEcharts" resultType="java.util.Map">
+        select DATE_FORMAT(add_time,'%Y-%m-%d') as addTime,
+            COUNT(add_time) AS count
+        FROM trans_monitor
+        WHERE add_time BETWEEN #{start} AND #{end}
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+        GROUP BY DATE_FORMAT(add_time,'%Y-%m-%d')
+    </select>
+</mapper>

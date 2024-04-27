@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alinesno.infra.data.integration.mapper.JobMapper">
+
+    <resultMap type="com.alinesno.infra.data.integration.dto.JobDto" id="JobType">
+        <result property="categoryName" column="categoryName_id"/>
+
+    </resultMap>
+
+    <select id="getCategoryName" resultType="com.alinesno.infra.data.integration.dto.JobDto">
+        SELECT category.category_name,job.*
+        FROM category,job
+        WHERE job.category_id=category.id
+    </select>
+</mapper>

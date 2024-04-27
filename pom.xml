@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.alinesno.infra.common</groupId>
+        <artifactId>alinesno-infra-platform-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <packaging>pom</packaging>
+
+    <groupId>com.alinesno.infra.data</groupId>
+    <artifactId>alinesno-infra-data-integration-parent</artifactId>
+    <version>${revision}</version>
+
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <alinesno.infra.version>${revision}</alinesno.infra.version>
+        <kettle-version>8.3.0.0-371</kettle-version>
+    </properties>
+
+    <modules>
+        <!-- 应用服务 -->
+        <module>alinesno-infra-data-integration-facade</module>  <!-- 接口和引用 -->
+        <module>alinesno-infra-data-integration-plugins</module>  <!-- 数据处理插件 -->
+        <module>alinesno-infra-data-integration-domain</module>  <!-- 领域服务 -->
+        <module>alinesno-infra-data-integration-adapter</module> <!-- 适配层 -->
+        <module>alinesno-infra-data-integration-api</module>     <!-- 接口服务 -->
+        <module>alinesno-infra-data-integration-client</module>  <!-- 对外引用 -->
+        <module>alinesno-infra-data-integration-boot</module>    <!-- 启动服务 -->
+        <module>alinesno-infra-data-kettle-core</module> <!-- kettle核心包 -->
+        <module>alinesno-infra-data-integration-quartz</module>
+
+        <!-- 前端服务
+        <module>alinesno-infra-data-etl-admin</module>
+        -->
+    </modules>
+
+    <!-- 解决无法下载仓库地址的问题 -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven2 Central Repository</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>pentaho-public</id>
+            <name>Pentaho Public</name>
+            <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>interval:15</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>nexus-pentaho</id>
+            <name>Nexus pentaho</name>
+            <url>https://nexus.pentaho.org/content/repositories/omni/</url>
+        </repository>
+    </repositories>
+
+</project>
+

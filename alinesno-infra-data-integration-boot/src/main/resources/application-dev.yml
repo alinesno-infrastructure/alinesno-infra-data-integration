@@ -1,0 +1,93 @@
+server:
+  port: 30202
+
+# spring 配置
+spring:
+  application:
+    name: alinesno-infra-data-integration-boot
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dev_alinesno_infra_data_etl_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: admin
+  clickhouse:
+    address: jdbc:clickhouse://139.9.210.215:8123
+    username: ENC(Wvyo5OKRBB4TzeYWwYqMcQ==)
+    password: ENC(ydZK2+5DLgY8Zb2Rd5UR33VziOcXBliMUiIAJ0lXh6w=)
+    db: acp_business
+    socketTimeout: 600000
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+  devtools:
+    restart:
+      enabled: true
+
+actable:
+  table:
+    auto: update
+  model:
+    pack: com.alinesno.infra.data.integration.entity;
+  database:
+    type: mysql
+  index:
+    prefix: alinesno_data_integration_idx_
+  unique:
+    prefix: alinesno_data_integration_uni_
+
+alinesno:
+  data:
+    etl:
+      workspacePath: ${user.home}/.infra-data-integration
+  storage-url: http://alinesno-storage.admin.beta.linesno.com/storage/download/
+
+# sa-token配置
+sa-token:
+  token-name: satoken
+  host-path: http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com
+  sso:
+    auth-url: ${sa-token.host-path}/login
+    is-http: true
+    check-ticket-url: ${sa-token.host-path}/sso/checkTicket
+    slo-url: ${sa-token.host-path}/sso/signout
+    get-data-url: ${sa-token.host-path}/sso/getData
+  sign:
+    secret-key:
+
+org:
+  quartz:
+    jobStore:
+      class: org.quartz.impl.jdbcjobstore.JobStoreTX
+      clusterCheckinInterval: 5000
+      driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+      isClustered: true
+      misfireThreshold: 60000
+      tablePrefix: QRTZ_
+      txIsolationLevelReadCommitted: true
+      useProperties: false
+    scheduler:
+      instanceId: AUTO
+      instanceName: ClusterQuartz
+      rmi:
+        export: false
+        proxy: false
+      wrapJobExecutionInUserTransaction: false
+
+# 定时任务
+db-scheduler:
+  immediate-execution-enabled: true
+  threads: 5
+  polling-interval: 5
+  polling-strategy: fetch
+  polling-strategy-lower-limit-fraction-of-threads: 0.5
+  polling-strategy-upper-limit-fraction-of-threads: 3.0
+  shutdown-max-wait: 30m
+
+kettle:
+  log-file-path: ${user.home}\kettle\logs\${spring.application.name}\run-logs
+  encoding: utf-8
+  upload-path: ${user.home}\kettle\var\kettle-script-file
+  kettle-home: ${user.home}\kettle\var\file-rep
+  kettlePluginPackages: ${user.home}\kettle\var\file-rep\plugin
+  kettlePluginBaseFolder: ${user.home}\kettle\var\file-rep\plugin

@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+    	<groupId>com.alinesno.infra.data</groupId>
+    	<artifactId>alinesno-infra-data-integration-parent</artifactId>
+		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>alinesno-infra-data-integration-boot</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+        <!-- 引用服务 -->
+		<dependency>
+			<groupId>com.alinesno.infra.common</groupId>
+			<artifactId>alinesno-infra-common-web-api-sso</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alinesno.infra.data</groupId>
+			<artifactId>alinesno-infra-data-integration-domain</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.alinesno.infra.data</groupId>-->
+<!--			<artifactId>alinesno-infra-data-etl-datasource</artifactId>-->
+<!--			<version>${revision}</version>-->
+<!--		</dependency>-->
+
+		<dependency>
+			<groupId>com.alinesno.infra.data</groupId>
+			<artifactId>alinesno-infra-data-integration-plugins</artifactId>
+			<version>${revision}</version>
+			<scope>compile</scope>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.alinesno.infra.data</groupId>-->
+<!--			<artifactId>alinesno-infra-data-etl-scheduler</artifactId>-->
+<!--			<version>${revision}</version>-->
+<!--		</dependency>-->
+
+		<dependency>
+			<groupId>com.alinesno.infra.data</groupId>
+			<artifactId>alinesno-infra-data-integration-adapter</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alinesno.infra.data</groupId>
+			<artifactId>alinesno-infra-data-integration-api</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

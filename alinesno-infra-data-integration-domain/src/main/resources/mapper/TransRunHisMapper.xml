@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alinesno.infra.data.integration.mapper.TransRunHisMapper">
+
+    <resultMap type="com.alinesno.infra.data.integration.entity.TransRunHisEntity" id="TransRunHisResult">
+                    <result property="monitorTransId" column="monitor_trans_id"/>
+                    <result property="startTime" column="start_time"/>
+                    <result property="endTime" column="end_time"/>
+                    <result property="runStatus" column="run_status"/>
+                    <result property="remark" column="remark"/>
+    </resultMap>
+
+    <select id="taskCount" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        select
+          CURDATE() curDay,
+            count(1) total,
+            sum( case when IFNULL(run_status,0) =1 then 1 else 0 end ) as success,
+            sum( case when IFNULL(run_status,0) =0 then 1 else 0 end ) as fail
+        from trans_run_his
+        where DATE_FORMAT(add_time, '%Y-%m-%d') =CURDATE()
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+    </select>
+
+    <select id="taskCountMonth" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        select
+          CURDATE() curDay,
+            count(1) total,
+            sum( case when IFNULL(run_status,0) =1 then 1 else 0 end ) as success,
+            sum( case when IFNULL(run_status,0) =0 then 1 else 0 end ) as fail
+        from trans_run_his
+        where DATE_FORMAT(add_time, '%Y-%m') = DATE_FORMAT( CURDATE() , '%Y-%m')
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+    </select>
+
+    <select id="taskCountYear" resultType="com.alinesno.infra.data.integration.vo.TaskCountVO">
+        select
+            DATE_FORMAT( CURDATE() , '%Y') as  curDay,
+            count(1) total,
+            sum( case when IFNULL(run_status,0) =1 then 1 else 0 end ) as success,
+            sum( case when IFNULL(run_status,0) =0 then 1 else 0 end ) as fail
+        from trans_run_his
+        where DATE_FORMAT(add_time, '%Y') = DATE_FORMAT( CURDATE() , '%Y')
+        <if test="operatorId != null and operatorId != '' ">
+            AND operator_id = #{operatorId}
+        </if>
+    </select>
+
+</mapper>
