@@ -34,7 +34,7 @@
         <module>alinesno-infra-data-integration-quartz</module>
 
         <!-- 前端服务
-        <module>alinesno-infra-data-etl-admin</module>
+        <module>alinesno-infra-data-integration-ui</module>
         -->
     </modules>
 
