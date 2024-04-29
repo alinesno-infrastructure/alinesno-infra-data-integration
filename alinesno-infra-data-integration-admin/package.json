@@ -1,5 +1,5 @@
 {
-  "name": "alinesno-infra-data-integration-ui",
+  "name": "alinesno-infra-data-etl-admin",
   "version": "1.0.0",
   "description": "异构数据集成服务",
   "author": "LuoXiaoDong",

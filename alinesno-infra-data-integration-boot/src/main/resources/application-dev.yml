@@ -9,7 +9,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/dev_alinesno_infra_data_etl_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
     username: root
-    password: admin
+    password: 123456
   clickhouse:
     address: jdbc:clickhouse://139.9.210.215:8123
     username: ENC(Wvyo5OKRBB4TzeYWwYqMcQ==)
