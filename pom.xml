@@ -27,7 +27,7 @@
         <module>alinesno-infra-data-integration-plugins</module>  <!-- 数据处理插件 -->
         <module>alinesno-infra-data-integration-domain</module>  <!-- 领域服务 -->
         <module>alinesno-infra-data-integration-adapter</module> <!-- 适配层 -->
-        <module>alinesno-infra-data-integration-api</module>     <!-- 接口服务 -->
+        <module>alinesno-infra-data-integration-gateway</module>     <!-- 接口服务 -->
         <module>alinesno-infra-data-integration-client</module>  <!-- 对外引用 -->
         <module>alinesno-infra-data-integration-boot</module>    <!-- 启动服务 -->
         <module>alinesno-infra-data-kettle-core</module> <!-- kettle核心包 -->
