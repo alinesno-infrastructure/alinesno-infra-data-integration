@@ -10,12 +10,6 @@ spring:
     url: jdbc:mysql://localhost:3306/dev_alinesno_infra_data_etl_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
     username: root
     password: 123456
-  clickhouse:
-    address: jdbc:clickhouse://139.9.210.215:8123
-    username: ENC(Wvyo5OKRBB4TzeYWwYqMcQ==)
-    password: ENC(ydZK2+5DLgY8Zb2Rd5UR33VziOcXBliMUiIAJ0lXh6w=)
-    db: acp_business
-    socketTimeout: 600000
   data:
     redis:
       host: 127.0.0.1
