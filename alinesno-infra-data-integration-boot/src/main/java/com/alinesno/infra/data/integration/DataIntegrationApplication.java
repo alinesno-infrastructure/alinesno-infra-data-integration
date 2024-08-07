@@ -13,9 +13,6 @@ import org.springframework.context.annotation.Bean;
  * @author paul
  * @date 2024年3月10日
  */
-@EnableActable
-@EnableInfraSsoApi
-@MapperScan("com.alinesno.infra.data.integration.mapper")
 @SpringBootApplication
 public class DataIntegrationApplication {
 
