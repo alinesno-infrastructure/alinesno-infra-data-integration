@@ -66,7 +66,7 @@ public class TransQuartz implements BaseJob {
         transMonitor.setLastExecuteTime(lastExecuteTime);
         transMonitor.setNextExecuteTime(nexExecuteTime);
         transMonitor.setOperatorId(transEntity.getOperatorId());
-        transMonitor.setTenantId(transEntity.getTenantId());
+        transMonitor.setOrgId(transEntity.getOrgId());
         transMonitor.setApplicationId(transEntity.getApplicationId());
         transMonitor.setApplicationName(transEntity.getApplicationName());
 
@@ -76,7 +76,7 @@ public class TransQuartz implements BaseJob {
         transRunHisEntity.setMonitorTransId(transId);
         transRunHisEntity.setStartTime(transStartTime);
         transRunHisEntity.setOperatorId(transEntity.getOperatorId());
-        transRunHisEntity.setTenantId(transEntity.getTenantId());
+        transRunHisEntity.setOrgId(transEntity.getOrgId());
         transRunHisEntity.setApplicationId(transEntity.getApplicationId());
         transRunHisEntity.setApplicationName(transEntity.getApplicationName());
 
