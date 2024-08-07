@@ -27,24 +27,11 @@
 			<version>${revision}</version>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>com.alinesno.infra.data</groupId>-->
-<!--			<artifactId>alinesno-infra-data-etl-datasource</artifactId>-->
-<!--			<version>${revision}</version>-->
-<!--		</dependency>-->
-
 		<dependency>
 			<groupId>com.alinesno.infra.data</groupId>
 			<artifactId>alinesno-infra-data-integration-plugins</artifactId>
 			<version>${revision}</version>
-			<scope>compile</scope>
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>com.alinesno.infra.data</groupId>-->
-<!--			<artifactId>alinesno-infra-data-etl-scheduler</artifactId>-->
-<!--			<version>${revision}</version>-->
-<!--		</dependency>-->
 
 		<dependency>
 			<groupId>com.alinesno.infra.data</groupId>
