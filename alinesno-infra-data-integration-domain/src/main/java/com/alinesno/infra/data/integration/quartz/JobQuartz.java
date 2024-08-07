@@ -71,7 +71,7 @@ public class JobQuartz implements BaseJob {
         jobMonitorEntity.setLastExecuteTime(lastExecuteTime);
         jobMonitorEntity.setNextExecuteTime(nexExecuteTime);
         jobMonitorEntity.setOperatorId(jobEntity.getOperatorId());
-        jobMonitorEntity.setTenantId(jobEntity.getTenantId());
+        jobMonitorEntity.setOrgId(jobEntity.getOrgId());
         jobMonitorEntity.setApplicationId(jobEntity.getApplicationId());
         jobMonitorEntity.setApplicationName(jobEntity.getApplicationName());
         jobMonitorEntity.setMonitorStatus(jobEntity.getStatus());
@@ -83,7 +83,7 @@ public class JobQuartz implements BaseJob {
         jobRunHisEntity.setRunJobId(jobId);
         jobRunHisEntity.setStartTime(jobStartTime);
         jobRunHisEntity.setOperatorId(jobEntity.getOperatorId());
-        jobRunHisEntity.setTenantId(jobEntity.getTenantId());
+        jobRunHisEntity.setOrgId(jobEntity.getOrgId());
         jobRunHisEntity.setApplicationId(jobEntity.getApplicationId());
 
         //设置任务和转换路径
