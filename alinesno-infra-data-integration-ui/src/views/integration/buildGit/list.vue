@@ -574,7 +574,7 @@ function resetGitForm() {
 <style lang="scss" scoped>
 .git-icon {
   font-size: 30px;
-  color: #005bd4;
+  color: #3b5998;
 }
 
 .bing-btn {
@@ -586,7 +586,7 @@ function resetGitForm() {
   height: 100%;
   font-size: 30px;
   margin-right: 10px;
-  color: #005bd4;
+  color: #3b5998;
 
   img{
     width: 35px;
