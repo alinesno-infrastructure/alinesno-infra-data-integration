@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div style="height: 52px; background-color: #005bd4;font-size: 14pt; font-weight: bold; color: #F0F0F0; padding-top: 18px; padding-left: 20px;">
+		<div style="height: 52px; background-color: #3b5998;font-size: 14pt; font-weight: bold; color: #F0F0F0; padding-top: 18px; padding-left: 20px;">
 			<i class="el-icon-connection"></i>&nbsp;服务详情
 		</div>
 		<!-- <el-divider content-position="left"><span style="color: #606266; ">网关服务详情</span></el-divider> -->
