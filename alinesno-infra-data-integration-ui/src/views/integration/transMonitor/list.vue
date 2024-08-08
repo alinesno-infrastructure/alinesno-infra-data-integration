@@ -544,12 +544,13 @@ function  formatJson(filterVal, jsonData) {
         font-size: 20px;
     }
     i {
-        color: #005bd4 ;
+        color: #3b5998 ;
         line-height: 60px;
     }
 }
 .el-span-8-tab {
     width: calc(33.3333333333% - 10px);
+    flex: 0 0 32.3333333333% ;
     margin-left: 10px;
 }
 .el-row {
