@@ -20,8 +20,4 @@ public class DataIntegrationApplication {
 		SpringApplication.run(DataIntegrationApplication.class, args);
 	}
 
-	@Bean
-	public SpringContext getSpringContext(){
-		return new SpringContext() ;
-	}
 }
