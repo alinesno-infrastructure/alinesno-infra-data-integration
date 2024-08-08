@@ -131,27 +131,33 @@ public class CommonLoginController {
     public AjaxResult getRouters()
     {
 
-//        Menu dashboardMenu = new Menu("Dashboard", "/dashboard", false, "noRedirect", "Layout", true, new Menu.Meta("仪盘表", "dashboard", false, null), List.of(
-//                new Menu("Dashboard", "index", false, false , "dashboard", new Menu.Meta("概览", "dashboard", false, null))
-//        ));
+        Menu dashboardMenu = new Menu("Dashboard", "/dashboard", false, "noRedirect", "Layout", true, new Menu.Meta("仪盘表", "dashboard", false, null), List.of(
+                new Menu("Dashboard", "index", false, false , "dashboard", new Menu.Meta("概览", "dashboard", false, null))
+        ));
 
-        Menu integrationMenu = new Menu("Integration", "/integration", false, "noRedirect", "Layout", true, new Menu.Meta("异构数据集成服务", "system", false, null), List.of(
-                new Menu("BuildGit", "integration/buildGit/list", false, false , "integration/buildGit/list", new Menu.Meta("git仓库", "druid", false, null)),
-                new Menu("Category", "integration/category/list", false, false , "integration/category/list", new Menu.Meta("任务分类", "peoples", false, null)),
-//                new Menu("Dashboard", "integration/dashboard/list", false, false , "integration/dashboard/list", new Menu.Meta("仪表盘", "online", false, null)),
-               new Menu("Job", "integration/job/list", false, false , "integration/job/list", new Menu.Meta("作业任务", "user", false, null)),
+        Menu monitor = new Menu("Monitor", "/monitor", false, "noRedirect", "Layout", true, new Menu.Meta("监控管理", "user", false, null), List.of(
                 new Menu("JobMonitor", "integration/jobMonitor/list", false, false , "integration/jobMonitor/list", new Menu.Meta("作业任务监控", "peoples", false, null)),
-                new Menu("jobRunHis", "integration/jobRunHis/list", false, false , "integration/jobRunHis/list", new Menu.Meta("作业任务历史", "druid", false, null)),
-                new Menu("Quartz", "integration/quartz/list", false, false , "integration/quartz/list", new Menu.Meta("定时调度策略", "peoples", false, null)),
-                new Menu("Trans", "integration/trans/list", false, false , "integration/trans/list", new Menu.Meta("转换任务", "online", false, null)),
-                new Menu("TransMonitor", "integration/transMonitor/list", false, false , "integration/transMonitor/list", new Menu.Meta("转换任务监控", "user", false, null)),
-                new Menu("TransRunHis", "integration/transRunHis/list", false, false , "integration/transRunHis/list", new Menu.Meta("转换任务历史", "peoples", false, null))
+                new Menu("TransMonitor", "integration/transMonitor/list", false, false , "integration/transMonitor/list", new Menu.Meta("转换任务监控", "user", false, null))
+        ));
+
+        Menu job = new Menu("Job", "/job", false, "noRedirect", "Layout", true, new Menu.Meta("作业管理", "druid", false, null), List.of(
+            new Menu("Category", "integration/category/list", false, false , "integration/category/list", new Menu.Meta("任务分类", "peoples", false, null)),
+            new Menu("Job", "integration/job/list", false, false , "integration/job/list", new Menu.Meta("作业任务", "user", false, null)),
+            new Menu("jobRunHis", "integration/jobRunHis/list", false, false , "integration/jobRunHis/list", new Menu.Meta("作业任务历史", "druid", false, null))
        ));
 
+        Menu trans = new Menu("Trans", "/trans", false, "noRedirect", "Layout", true, new Menu.Meta("转换管理", "peoples", false, null), List.of(
+            new Menu("jobRunHis", "integration/jobRunHis/list", false, false , "integration/jobRunHis/list", new Menu.Meta("作业任务历史", "druid", false, null)),
+            new Menu("Trans", "integration/trans/list", false, false , "integration/trans/list", new Menu.Meta("转换任务", "online", false, null)),
+            new Menu("TransRunHis", "integration/transRunHis/list", false, false , "integration/transRunHis/list", new Menu.Meta("转换任务历史", "peoples", false, null))
+        ));
 
+        Menu systemMenu = new Menu("System", "/system", false, "noRedirect", "Layout", true, new Menu.Meta("系统配置", "system", false, null), List.of(
+                new Menu("Quartz", "integration/quartz/list", false, false , "integration/quartz/list", new Menu.Meta("定时调度策略", "peoples", false, null)),
+                new Menu("BuildGit", "integration/buildGit/list", false, false , "integration/buildGit/list", new Menu.Meta("文件存储", "druid", false, null))
+        ));
 
-
-        List<Menu> menus = List.of( integrationMenu ) ;
+        List<Menu> menus = List.of( dashboardMenu , monitor , job , trans , systemMenu ) ;
         String jsonString = JSON.toJSONString(menus, SerializerFeature.WriteMapNullValue);
 
         return AjaxResult.success(JSONArray.parseArray(jsonString)) ;
