@@ -147,7 +147,6 @@ public class CommonLoginController {
        ));
 
         Menu trans = new Menu("Trans", "/trans", false, "noRedirect", "Layout", true, new Menu.Meta("转换管理", "peoples", false, null), List.of(
-            new Menu("jobRunHis", "integration/jobRunHis/list", false, false , "integration/jobRunHis/list", new Menu.Meta("作业任务历史", "druid", false, null)),
             new Menu("Trans", "integration/trans/list", false, false , "integration/trans/list", new Menu.Meta("转换任务", "online", false, null)),
             new Menu("TransRunHis", "integration/transRunHis/list", false, false , "integration/transRunHis/list", new Menu.Meta("转换任务历史", "peoples", false, null))
         ));
