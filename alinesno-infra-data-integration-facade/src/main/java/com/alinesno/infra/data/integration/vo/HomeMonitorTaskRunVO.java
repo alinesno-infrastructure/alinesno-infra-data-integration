@@ -4,7 +4,7 @@ package com.alinesno.infra.data.integration.vo;
  * 页面监控条形图的VO
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class HomeMonitorTaskRunVO {
 
