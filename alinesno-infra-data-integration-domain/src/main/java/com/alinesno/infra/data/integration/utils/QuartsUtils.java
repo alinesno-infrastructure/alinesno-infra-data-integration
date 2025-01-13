@@ -11,7 +11,7 @@ import org.quartz.JobDataMap;
  * 定时任务工具类
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class QuartsUtils {
 
