@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
  * quartz定时任务工具类，对任务进行管理（创建、修改、删除、暂停）
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Service
 public class QuartsJobServiceImpl implements QuartsJobService {
