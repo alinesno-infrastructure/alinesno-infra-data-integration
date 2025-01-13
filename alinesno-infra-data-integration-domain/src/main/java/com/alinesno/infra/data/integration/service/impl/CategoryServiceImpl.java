@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * 【请填写功能名称】Service业务层处理
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Service
 public class CategoryServiceImpl extends IBaseServiceImpl<CategoryEntity, CategoryMapper> implements ICategoryService {
