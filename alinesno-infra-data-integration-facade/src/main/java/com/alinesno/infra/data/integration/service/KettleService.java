@@ -10,7 +10,7 @@ import java.util.List;
  * kettle执行动作的公共接口
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public interface KettleService<Entity> extends IBaseService<Entity> {
 
