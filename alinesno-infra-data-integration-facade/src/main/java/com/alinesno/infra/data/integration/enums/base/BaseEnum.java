@@ -4,7 +4,7 @@ package com.alinesno.infra.data.integration.enums.base;
  * 枚举定义接口，实现了统一接口的枚举方便做统一处理
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public interface BaseEnum<T> {
 
