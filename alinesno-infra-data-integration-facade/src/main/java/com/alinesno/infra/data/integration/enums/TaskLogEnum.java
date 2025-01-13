@@ -1,6 +1,7 @@
 package com.alinesno.infra.data.integration.enums;
 
 import com.alinesno.infra.data.integration.enums.base.BaseEnum;
+
 import java.util.Arrays;
 import java.util.Objects;
 
