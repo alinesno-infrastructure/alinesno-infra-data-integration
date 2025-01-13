@@ -29,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -39,7 +40,7 @@ import java.util.List;
  * 【请填写功能名称】Service业务层处理
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Service
 public class BuildGitServiceImpl extends IBaseServiceImpl<BuildGitEntity, BuildGitMapper> implements IBuildGitService {
