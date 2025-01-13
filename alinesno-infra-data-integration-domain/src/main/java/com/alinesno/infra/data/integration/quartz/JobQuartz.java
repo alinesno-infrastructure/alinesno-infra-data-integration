@@ -2,6 +2,7 @@ package com.alinesno.infra.data.integration.quartz;
 
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.util.StrUtil;
+import com.alinesno.infra.common.facade.mapper.entity.BaseEntity;
 import com.alinesno.infra.data.integration.dto.FileDto;
 import com.alinesno.infra.data.integration.entity.BuildGitEntity;
 import com.alinesno.infra.data.integration.entity.JobEntity;
@@ -18,15 +19,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.*;
 import java.util.stream.Collectors;
-import com.alinesno.infra.common.facade.mapper.entity.BaseEntity;
 
 /**
  * 转换定时任务执行器
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Component
 public class JobQuartz implements BaseJob {
