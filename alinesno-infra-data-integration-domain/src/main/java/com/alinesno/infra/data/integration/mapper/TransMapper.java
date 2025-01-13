@@ -4,13 +4,14 @@ import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
 import com.alinesno.infra.data.integration.dto.TransDto;
 import com.alinesno.infra.data.integration.entity.TransEntity;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 /**
  * 【请填写功能名称】Mapper接口
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Repository
 public interface TransMapper extends IBaseMapper<TransEntity> {
