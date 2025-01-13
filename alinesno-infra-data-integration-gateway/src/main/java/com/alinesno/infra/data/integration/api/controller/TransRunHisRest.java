@@ -7,6 +7,7 @@ import com.alinesno.infra.common.web.adapter.plugins.TranslateCode;
 import com.alinesno.infra.common.web.adapter.rest.BaseController;
 import com.alinesno.infra.data.integration.entity.TransRunHisEntity;
 import com.alinesno.infra.data.integration.service.ITransRunHisService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * 【请填写功能名称】Rest
