@@ -2,6 +2,7 @@ package com.alinesno.infra.data.integration.service.impl;
 
 import com.alinesno.infra.common.core.service.impl.IBaseServiceImpl;
 import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
+import com.alinesno.infra.data.integration.dto.QuartzDTO;
 import com.alinesno.infra.data.integration.entity.BaseKettleEntity;
 import com.alinesno.infra.data.integration.entity.QuartzEntity;
 import com.alinesno.infra.data.integration.enums.RunStatusEnum;
@@ -10,9 +11,9 @@ import com.alinesno.infra.data.integration.service.BaseJob;
 import com.alinesno.infra.data.integration.service.KettleService;
 import com.alinesno.infra.data.integration.service.QuartsJobService;
 import com.alinesno.infra.data.integration.utils.QuartsUtils;
-import com.alinesno.infra.data.integration.dto.QuartzDTO;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * kettle操作的基础实现类
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class BaseKettleServiceImpl<Entity extends BaseKettleEntity, M extends IBaseMapper<Entity>> extends IBaseServiceImpl<Entity, M> implements KettleService<Entity> {
 
