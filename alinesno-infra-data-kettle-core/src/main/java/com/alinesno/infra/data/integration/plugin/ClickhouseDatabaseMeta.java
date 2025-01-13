@@ -9,13 +9,14 @@ import org.pentaho.di.core.exception.KettleDatabaseException;
 import org.pentaho.di.core.plugins.DatabaseMetaPlugin;
 import org.pentaho.di.core.row.ValueMetaInterface;
 import org.pentaho.di.core.util.Utils;
+
 import java.sql.ResultSet;
 
 /**
  * 【kettle连接clickhouse数据库插件】
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 
 @DatabaseMetaPlugin(
