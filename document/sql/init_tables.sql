@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 80100
  Source Host           : localhost:3306
- Source Schema         : dev_alinesno_infra_data_etl_v100
+ Source Schema         : dev_alinesno_infra_data_integration_v100
 
  Target Server Type    : MySQL
  Target Server Version : 80100
