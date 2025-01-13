@@ -13,7 +13,7 @@ import lombok.ToString;
  * 数据表：  trans
  * 表备注：
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = true)
