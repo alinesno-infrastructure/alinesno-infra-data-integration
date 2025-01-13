@@ -21,6 +21,7 @@ import com.alinesno.infra.data.integration.service.IJobService;
 import com.alinesno.infra.data.integration.service.ITransService;
 import com.alinesno.infra.data.integration.vo.ResponseBean;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import jakarta.servlet.http.HttpServletRequest;
+
 import java.util.*;
 
 /**
