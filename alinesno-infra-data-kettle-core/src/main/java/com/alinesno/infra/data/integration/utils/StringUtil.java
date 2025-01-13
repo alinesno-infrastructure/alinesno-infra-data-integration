@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
  * </pre>
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class StringUtil extends StringUtils {
 }
