@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +18,7 @@ import java.util.Map;
  * 任务转换插件
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Component("jobPlugin")
 public class JobPlugin implements TranslatePlugin {
