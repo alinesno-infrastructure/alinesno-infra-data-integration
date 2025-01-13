@@ -5,9 +5,10 @@ server:
 spring:
   application:
     name: alinesno-infra-data-integration-boot
+    id: 1878630713702023168
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/dev_alinesno_infra_data_etl_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
+    url: jdbc:mysql://localhost:3306/dev_alinesno_infra_data_integration_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL
     username: root
     password: adminer
   data:
@@ -31,15 +32,11 @@ actable:
   unique:
     prefix: alinesno_data_integration_uni_
 
-alinesno:
-  data:
-    etl:
-      workspacePath: ${user.home}/.infra-data-integration
-  storage-url: http://alinesno-storage.admin.beta.linesno.com/storage/download/
+
 
 # sa-token配置
 sa-token:
-  token-name: satoken
+  token-name: Authorization
   host-path: http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com
   sso:
     auth-url: ${sa-token.host-path}/login
@@ -48,7 +45,22 @@ sa-token:
     slo-url: ${sa-token.host-path}/sso/signout
     get-data-url: ${sa-token.host-path}/sso/getData
   sign:
-    secret-key:
+    secret-key: kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
+
+# wechat token
+alinesno:
+  data:
+    etl:
+      workspacePath: ${user.home}/.infra-data-integration
+  storage-url: http://alinesno-storage.admin.beta.linesno.com/storage/download/
+  security:
+    # 排除路径
+    excludes:
+      - /sso/**
+      - /logout
+  infra:
+    gateway:
+      host: http://alinesno-infra-base-gateway-proxy-application.beta.base.infra.linesno.com
 
 org:
   quartz:
