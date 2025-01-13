@@ -4,7 +4,7 @@ package com.alinesno.infra.data.integration.init;
  * 初始化一些基础的应用数据，用于用户体验
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public interface InitDataService {
 
