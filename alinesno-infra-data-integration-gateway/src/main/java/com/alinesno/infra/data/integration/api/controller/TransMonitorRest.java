@@ -9,6 +9,7 @@ import com.alinesno.infra.data.integration.entity.TransMonitorEntity;
 import com.alinesno.infra.data.integration.service.ITransMonitorService;
 import com.alinesno.infra.data.integration.vo.ResponseBean;
 import com.alinesno.infra.data.integration.vo.TaskCountVO;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,13 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * 【转换监控任务】Rest
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @RestController
 @Scope(SpringInstanceScope.PROTOTYPE)
