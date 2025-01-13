@@ -11,7 +11,7 @@ import java.util.List;
  * 任务类型的
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Data
 public class JobDto extends InfraBaseEntity {
