@@ -1,6 +1,7 @@
 package com.alinesno.infra.data.integration.enums;
 
 import com.alinesno.infra.data.integration.enums.base.BaseEnum;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -8,7 +9,7 @@ import java.util.Objects;
  * 脚本运行类型枚举类
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 
 
