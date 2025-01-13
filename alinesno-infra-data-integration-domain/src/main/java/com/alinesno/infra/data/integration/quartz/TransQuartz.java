@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,7 @@ import java.util.Map;
  * 转换定时任务执行器
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Component
 public class TransQuartz implements BaseJob {
