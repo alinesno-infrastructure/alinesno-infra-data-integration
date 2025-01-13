@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Data
 public class TransDto extends InfraBaseEntity {
