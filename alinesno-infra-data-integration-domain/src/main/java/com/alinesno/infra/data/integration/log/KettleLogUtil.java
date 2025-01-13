@@ -5,13 +5,14 @@ import org.pentaho.di.core.Const;
 import org.pentaho.di.core.logging.KettleLogStore;
 import org.pentaho.di.core.logging.KettleLoggingEvent;
 import org.pentaho.di.core.logging.LoggingBuffer;
+
 import java.util.List;
 
 /**
  * kettle日志操作工具
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class KettleLogUtil {
 
