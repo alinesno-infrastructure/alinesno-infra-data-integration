@@ -4,6 +4,7 @@ import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
 import com.alinesno.infra.data.integration.entity.JobMonitorEntity;
 import com.alinesno.infra.data.integration.vo.TaskCountVO;
 import org.springframework.stereotype.Repository;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
  * 【请填写功能名称】Mapper接口
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Repository
 public interface JobMonitorMapper extends IBaseMapper<JobMonitorEntity> {
