@@ -2,11 +2,12 @@ package com.alinesno.infra.data.integration.dto;
 
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import lombok.Data;
+
 import java.util.Date;
 
 /**
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Data
 public class JobMonitorDto extends InfraBaseEntity {
