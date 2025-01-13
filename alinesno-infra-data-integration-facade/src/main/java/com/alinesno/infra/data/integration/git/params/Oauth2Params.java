@@ -4,7 +4,7 @@ package com.alinesno.infra.data.integration.git.params;
  * github Oauth2认证信息
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class Oauth2Params {
 
