@@ -3,13 +3,14 @@ package com.alinesno.infra.data.integration.constant;
 import com.alinesno.infra.data.integration.utils.FileUtil;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+
 import java.nio.charset.Charset;
 
 /**
  * 配置在yml文件中的常量数据
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Component
 @ConfigurationProperties(prefix = "kettle")
