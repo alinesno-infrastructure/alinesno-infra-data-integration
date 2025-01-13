@@ -18,7 +18,7 @@ import java.net.URLEncoder;
  * 文件操作工具, 同时继承common-io包的FileUtils
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 
 public class FileUtil extends FileUtils {
