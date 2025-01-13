@@ -11,7 +11,7 @@ import lombok.ToString;
  * kettle属性的基础实现类
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = true)
