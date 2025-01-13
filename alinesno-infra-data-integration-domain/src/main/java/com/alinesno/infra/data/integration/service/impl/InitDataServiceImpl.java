@@ -7,6 +7,7 @@ import com.alinesno.infra.data.integration.init.InitDataService;
 import com.alinesno.infra.data.integration.service.IBuildGitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * 初始化项目和代码各个工程
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Service
 public class InitDataServiceImpl implements InitDataService {
