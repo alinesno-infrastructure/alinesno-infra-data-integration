@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * 获取系统参数
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Component
 public class GitSystemParams {
