@@ -2,18 +2,18 @@ package com.alinesno.infra.data.integration.git.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * token认证授权
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Component
 public class AccessTokenUtils {
