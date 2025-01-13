@@ -6,7 +6,7 @@ import lombok.Data;
  * 保存绑定的gitlab
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Data
 public class BingFormGitlabDto {
