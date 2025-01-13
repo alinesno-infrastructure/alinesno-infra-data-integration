@@ -6,7 +6,7 @@ import java.util.List;
  * 任务的vo
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class JobVo {
     private Long id;
