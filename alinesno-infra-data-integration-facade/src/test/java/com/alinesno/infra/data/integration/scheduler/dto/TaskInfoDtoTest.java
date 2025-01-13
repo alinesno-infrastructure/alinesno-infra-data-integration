@@ -36,7 +36,7 @@
 //        reader.setName("mysql");
 //        reader.setType(SourceReaderEnums.MYSQL.getCode());
 //        reader.setDriverClass("com.mysql.cj.jdbc.Driver");
-//        reader.setJdbcUrl("jdbc:mysql://localhost:3306/dev_alinesno_infra_data_etl_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL");
+//        reader.setJdbcUrl("jdbc:mysql://localhost:3306/dev_alinesno_infra_data_integration_v100?serverTimezone=GMT%2B8&zeroDateTimeBehavior=CONVERT_TO_NULL");
 //        reader.setPassword("adminer");
 //        reader.setUsername("root");
 //        reader.setQuerySql("select * from kfinfo");
