@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * 【请填写功能名称】Mapper接口
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Repository
 public interface QuartzMapper extends IBaseMapper<QuartzEntity> {
