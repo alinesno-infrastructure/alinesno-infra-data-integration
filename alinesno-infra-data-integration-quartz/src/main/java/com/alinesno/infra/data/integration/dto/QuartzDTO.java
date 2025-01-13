@@ -7,7 +7,7 @@ import org.quartz.JobDataMap;
  * 定时任务需要的参数
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 
 public class QuartzDTO {
