@@ -4,7 +4,7 @@ import request from '@/utils/request';
  * 【请填写功能名称】 接口文件
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 
 // 接口配置项
