@@ -1,6 +1,7 @@
 package com.alinesno.infra.data.integration.utils;
 
 import cn.hutool.core.text.StrFormatter;
+
 import java.util.Collection;
 import java.util.Map;
 
