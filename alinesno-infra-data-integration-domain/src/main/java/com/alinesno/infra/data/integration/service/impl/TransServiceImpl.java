@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 
@@ -21,7 +22,7 @@ import java.util.List;
  * 【请填写功能名称】Service业务层处理
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Service
 public class TransServiceImpl extends BaseKettleServiceImpl<TransEntity, TransMapper> implements ITransService {
