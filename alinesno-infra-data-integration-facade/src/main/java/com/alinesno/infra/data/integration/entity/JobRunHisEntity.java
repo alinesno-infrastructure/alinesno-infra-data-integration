@@ -1,26 +1,25 @@
 package com.alinesno.infra.data.integration.entity;
 
-import java.util.Date;
-
+import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
-import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
 import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
 import com.gitee.sunchenbin.mybatis.actable.constants.MySqlTypeConstant;
-//import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
+import java.util.Date;
 
 /**
  * 功能名： 【作业执行历史】
  * 数据表：  job_run_his
  * 表备注：
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = true)
