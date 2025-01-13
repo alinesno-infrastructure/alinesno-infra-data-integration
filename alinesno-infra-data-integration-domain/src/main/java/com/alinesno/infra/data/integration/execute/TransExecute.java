@@ -15,6 +15,7 @@ import org.pentaho.di.trans.Trans;
 import org.pentaho.di.trans.TransMeta;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.util.Map;
 import java.util.Random;
 
@@ -22,7 +23,7 @@ import java.util.Random;
  * kettle的ktr脚本执行器
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public class TransExecute {
 
