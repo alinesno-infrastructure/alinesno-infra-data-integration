@@ -2,7 +2,7 @@
   <!--
     dashboard
     @author paul
-    @date 2024年3月10日
+    @version 1.0.0
   -->
   <div class="app-container">
     <el-row :gutter="24">
