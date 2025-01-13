@@ -7,7 +7,7 @@ import org.quartz.*;
  * 定时任务接口
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public interface QuartsJobService {
 
