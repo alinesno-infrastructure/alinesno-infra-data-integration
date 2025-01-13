@@ -8,7 +8,7 @@ import lombok.Data;
  * 文件类型dto
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 @Data
 public class FileDto {
