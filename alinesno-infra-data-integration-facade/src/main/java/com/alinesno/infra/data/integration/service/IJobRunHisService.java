@@ -8,7 +8,7 @@ import com.alinesno.infra.data.integration.entity.JobRunHisEntity;
  * 【请填写功能名称】Service接口
  *
  * @author paul
- * @date 2024年3月10日
+ * @version 1.0.0
  */
 public interface IJobRunHisService extends IBaseService<JobRunHisEntity>{
 
